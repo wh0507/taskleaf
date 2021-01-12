@@ -66,4 +66,4 @@ gem 'slim-rails'
 gem 'html2slim'
 
 gem 'bootstrap'
-gem "sassc", "< 2.2.0"
+#gem "sassc", "< 2.2.0"

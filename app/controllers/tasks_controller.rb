@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @tasks = Task.all
@@ -37,7 +38,13 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description)
+    params.require(:task).permit(:name, :description).merge(user_id: current_user.id)
   end
 
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
+  
 end

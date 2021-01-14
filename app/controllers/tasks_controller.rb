@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :set_task, only: [:edit, :show]
   before_action :move_to_index, except: [:index, :show]
 
   def index
@@ -6,7 +7,6 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def new
@@ -20,7 +20,6 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
@@ -39,6 +38,10 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:name, :description).merge(user_id: current_user.id)
+  end
+
+  def set_task
+    @task = Task.find(params[:id])
   end
 
   def move_to_index

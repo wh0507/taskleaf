@@ -1,1 +1,14 @@
 @import "bootstrap";
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  color:#6c757d;
+  font-size: large;
+  padding: 8px;
+}
+
+.navbar-brand>a {
+  color:rebeccapurple;
+  font-size: 30px;
+}

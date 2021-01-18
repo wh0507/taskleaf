@@ -1,9 +1,9 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:edit, :show]
+  before_action :set_task, only: [:edit, :show, :destroy]
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @tasks = Task.all
+    @tasks = Task.all.order(created_at: :desc)
   end
 
   def show
@@ -24,6 +24,9 @@ class TasksController < ApplicationController
   end
 
   def edit
+    if @task.user_id != current_user.id
+      redirect_to action: :index
+    end
   end
 
   def update
@@ -33,9 +36,12 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    task = Task.find(params[:id])
-    task.destroy
-    redirect_to tasks_url, notice: "タスク「#{task.name}」を削除しました。"
+    if @task.user_id == current_user.id
+      @task.destroy
+      redirect_to tasks_url, notice: "タスク「#{@task.name}」を削除しました。"
+    else
+      render :index
+    end
   end
 
   private

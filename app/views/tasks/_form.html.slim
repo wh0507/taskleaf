@@ -10,4 +10,14 @@
   .form-group
     = f.label :description
     = f.text_area :description, row: 5, class: 'form-control', id: 'task_description'
+  .form-group
+    = f.label :start_date
+    br
+    = f.datetime_select :start_date, {}, class: 'form-control datetime-form'
+    br
+  .form-group
+    = f.label :end_date
+    br
+    = f.datetime_select :end_date, {}, class: 'form-control datetime-form'
+    br
   = f.submit nil, class: 'btn btn-primary'

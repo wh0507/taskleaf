@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ 
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
 
 @import "bootstrap";
 
@@ -32,4 +39,17 @@
 .datetime-form {
   display: inline-block;
   width: auto;
+}
+
+//*カレンダー*//
+/* 日曜日 */
+.fc-day-sun {
+  color: red;
+  background-color: #fff0f0;
+}
+
+/* 土曜日 */
+.fc-day-sat {
+  color: blue;
+  background-color: #e5e5fc;
 }

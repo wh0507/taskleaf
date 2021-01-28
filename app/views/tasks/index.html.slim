@@ -1,10 +1,9 @@
 h1 タスク一覧
 
-.mb-3
 table.table.table-hover
   thead.thead-default
     tr
-      th= Task.human_attribute_name(:name)
+      th= Task.human_attribute_name(:title)
       th= Task.human_attribute_name(:created_at)
       th= Task.human_attribute_name(:start_date)
       th= Task.human_attribute_name(:end_date)
@@ -13,14 +12,11 @@ table.table.table-hover
   tbody
     - Task.all.each do |task|
       tr
-        td= link_to task.name, task_path(task)
+        td= link_to task.title, task_path(task)
         td= task.created_at
         td= task.start_date
         td= task.end_date
         th
           = link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
-          = link_to '削除', task, method: :delete, data: { confirm: "タスク「#{task.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger mr-2'
+          = link_to '削除', task, method: :delete, data: { confirm: "タスク「#{task.title}」を削除します。よろしいですか？"}, class: 'btn btn-danger mr-2'
           .fas.fa-trash-restore.fa-lg.fa-fw
-          
-        .container
-          #calendar

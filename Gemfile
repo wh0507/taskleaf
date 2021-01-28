@@ -73,3 +73,5 @@ gem "sassc", "< 2.2.0"
 gem "aws-sdk-s3", require: false
 
 gem 'devise'
+
+gem 'font-awesome-sass'

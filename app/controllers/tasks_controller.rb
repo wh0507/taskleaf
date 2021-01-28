@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:edit, :show, :destroy]
+  before_action :set_task, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show]
 
   def index
@@ -17,7 +17,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      redirect_to @task, notice: "タスク「#{@task.name}」を登録しました。"
+      redirect_to task_path(@task), notice: "タスク「#{@task.title}」を登録しました。"
     else
       render :new
     end
@@ -32,13 +32,13 @@ class TasksController < ApplicationController
   def update
     task = Task.find(params[:id])
     task.update!(task_params)
-    redirect_to tasks_url, notice: "タスク「#{task.name}」を更新しました。"
+    redirect_to tasks_url, notice: "タスク「#{task.title}」を更新しました。"
   end
 
   def destroy
     if @task.user_id == current_user.id
       @task.destroy
-      redirect_to tasks_url, notice: "タスク「#{@task.name}」を削除しました。"
+      redirect_to tasks_url, notice: "タスク「#{@task.title}」を削除しました。"
     else
       render :index
     end
@@ -47,7 +47,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:name, :description).merge(user_id: current_user.id)
+    params.require(:task).permit(:title, :description, :start_date, :end_date).merge(user_id: current_user.id)
   end
 
   def set_task

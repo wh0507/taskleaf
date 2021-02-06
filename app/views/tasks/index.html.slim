@@ -1,5 +1,8 @@
 h1 タスク一覧
 
+.container
+  #calendar
+
 table.table.table-hover
   thead.thead-default
     tr
@@ -17,6 +20,11 @@ table.table.table-hover
         td= task.start_date
         td= task.end_date
         th
-          = link_to '編集', edit_task_path(task), class: 'btn btn-primary mr-3'
-          = link_to '削除', task, method: :delete, data: { confirm: "タスク「#{task.title}」を削除します。よろしいですか？"}, class: 'btn btn-danger mr-2'
-          .fas.fa-trash-restore.fa-lg.fa-fw
+          .btn class="btn-primary mr-3" 
+            = link_to edit_task_path(task) do 
+              .icalss.far.fa-edit.fa-lg.fa-fw 
+              |編集
+          .btn class="btn-danger mr-3" 
+            = link_to task, method: :delete, data: { confirm: "タスク「#{task.title}」を削除します。よろしいですか？"} do
+              .iclass.fas.fa-trash-restore.fa-lg.fa-fw
+              |削除

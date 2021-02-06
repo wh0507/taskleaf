@@ -6,9 +6,11 @@ import listPlugin from '@fullcalendar/list';
 import googleCalendarPlugin from '@fullcalendar/google-calendar';
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('turbolinks:load', function () {
+  // DOMを取得
   var calendarEl = document.getElementById('calendar');
-
+  
+  // 指定DOMにカレンダープラグインを適用する
   var calendar = new Calendar(calendarEl, {
     plugins: [googleCalendarPlugin, dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin],
     eventSources: [

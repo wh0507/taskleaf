@@ -21,6 +21,7 @@ class TasksController < ApplicationController
     else
       render :new
     end
+    
   end
 
   def edit

@@ -40,16 +40,3 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   display: inline-block;
   width: auto;
 }
-
-//*カレンダー*//
-/* 日曜日 */
-.fc-day-sun {
-  color: red;
-  background-color: #f7c1c1;
-}
-
-/* 土曜日 */
-.fc-day-sat {
-  color: blue;
-  background-color: #e5e5fc;
-}

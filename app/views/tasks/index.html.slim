@@ -1,4 +1,7 @@
 h1 タスク一覧
+.col-12.clearfix
+  .float-right.btn-registration
+    = link_to 'タスク登録', new_task_path, class: 'btn btn-primary btn-lg mb-3 btn-registration' 
 
 .container
   #calendar
@@ -10,7 +13,6 @@ table.table.table-hover
       th= Task.human_attribute_name(:created_at)
       th= Task.human_attribute_name(:start_date)
       th= Task.human_attribute_name(:end_date)
-      th= link_to 'タスク登録', new_task_path, class: 'btn btn-primary' 
       th
   tbody
     - Task.all.each do |task|

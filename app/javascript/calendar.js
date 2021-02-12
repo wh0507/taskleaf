@@ -25,19 +25,20 @@ document.addEventListener('turbolinks:load', function () {
         left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-      },
-      events: '/tasks.json', //カレンダー上の予定（以下「イベント」）の表示に使用します
+    },
+    events: '/tasks.json', //カレンダー上の予定（以下「イベント」）の表示に使用します
+      timeZone: 'Asia/Tokyo',
       locale: 'ja', //カレンダーに表示する文字の言語選択
       firstDay: 0, //日曜日から表示する
-      businessHours: true, //休日を表示するかどうか
       navLinks: true, //カレンダー内の日付クリックで日表示に遷移するかどうか
       nowIndicator: true,
       weekNumbers: true,
       weekNumberCalculation: 'ISO',
       editable: true, //イベントを編集できるかどうか
       selectable: true,
-      dayMaxEvents: true
-    });
+      dayMaxEvents: true,
+      selectLongPressDelay: 0 // スマホでタップしたとき即反応
+  });
 
     calendar.render();
   });

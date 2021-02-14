@@ -15,16 +15,16 @@ table.table.table-hover
       td= simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div")
     tr
       th= Task.human_attribute_name(:start_date)
-      td= @task.start_date
+      td= @task.start_date.to_s(:datetime_jp)
     tr
       th= Task.human_attribute_name(:end_date)
-      td= @task.end_date
+      td= @task.end_date.to_s(:datetime_jp)
     tr
       th= Task.human_attribute_name(:created_at)
-      td= @task.created_at
+      td= @task.created_at.to_s(:datetime_jp)
     tr
       th= Task.human_attribute_name(:updated_at)
-      td= @task.updated_at
+      td= @task.updated_at.to_s(:datetime_jp)
     
 = link_to '編集', edit_task_path, class: 'btn btn-primary mr-3'
 = link_to '削除', @task, method: :delete, data: { confirm: "タスク「#{@task.title}」を削除します。よろしいですか？"}, class: 'btn btn-danger'

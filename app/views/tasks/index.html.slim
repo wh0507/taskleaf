@@ -18,9 +18,9 @@ table.table.table-hover
     - Task.all.each do |task|
       tr
         td= link_to task.title, task_path(task)
-        td= task.created_at
-        td= task.start_date
-        td= task.end_date
+        td= task.created_at.to_s(:datetime_jp)
+        td= task.start_date.to_s(:datetime_jp)
+        td= task.end_date.to_s(:datetime_jp)
         th
           .btn class="btn-primary mr-3" 
             = link_to edit_task_path(task) do 

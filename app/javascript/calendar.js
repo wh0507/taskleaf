@@ -37,7 +37,7 @@ document.addEventListener('turbolinks:load', function () {
       editable: true, //イベントを編集できるかどうか
       selectable: true,
       dayMaxEvents: true,
-      selectLongPressDelay: 0 // スマホでタップしたとき即反応
+    selectLongPressDelay: 0 // スマホでタップしたとき即反応
   });
 
     calendar.render();

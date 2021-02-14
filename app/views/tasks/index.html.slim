@@ -1,4 +1,5 @@
 h1 タスク一覧
+
 .col-12.clearfix
   .float-right.btn-registration
     = link_to 'タスク登録', new_task_path, class: 'btn btn-primary btn-lg mb-3 btn-registration' 
@@ -17,6 +18,7 @@ table.table.table-hover
   tbody
     - Task.all.each do |task|
       tr
+        = paginate @tasks
         td= link_to task.title, task_path(task)
         td= task.created_at.to_s(:datetime_jp)
         td= task.start_date.to_s(:datetime_jp)

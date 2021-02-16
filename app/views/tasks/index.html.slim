@@ -7,6 +7,8 @@ h1 タスク一覧
 .container
   #calendar
 
+= paginate @tasks
+
 table.table.table-hover
   thead.thead-default
     tr
@@ -16,9 +18,8 @@ table.table.table-hover
       th= Task.human_attribute_name(:end_date)
       th
   tbody
-    - Task.all.each do |task|
+    - @tasks.each do |task|
       tr
-        = paginate @tasks
         td= link_to task.title, task_path(task)
         td= task.created_at.to_s(:datetime_jp)
         td= task.start_date.to_s(:datetime_jp)

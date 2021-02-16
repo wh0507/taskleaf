@@ -1,4 +1,5 @@
 class Task < ApplicationRecord
+  paginates_per 5
   validates :title, length: { maximum: 30 }, presence: true
   validate :validate_name_comma
   

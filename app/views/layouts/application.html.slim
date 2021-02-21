@@ -20,7 +20,7 @@ html
             = current_user.nickname
             ul.show-lists
               li= link_to 'マイページ',"/users/#{current_user.id}"
-              li= link_to '1234',"/users/#{current_user.id}"
+              li= link_to 'マイページ(未)',"/users/#{current_user.id}"
           li.nav-item = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link'
       - else  
           li.nav-item= link_to 'ログイン', new_user_session_path, class: 'nav-link'

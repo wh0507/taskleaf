@@ -22,7 +22,7 @@ h1 {
   margin: 10px 10px;
 }
 
-/*mouseover プールダウン*/
+/**mouseover プールダウン**/
 ul {
   margin: 0;
   padding: 0;
@@ -40,7 +40,7 @@ ul {
   position: absolute;
   right: 145px;
   top: 70px;
-  width: 100px;
+  width: 150px;
   min-height: 0;
   height: 0;
   z-index: 3;
@@ -64,3 +64,4 @@ ul {
 .show-lists.active {
   min-height: 150px;
 }
+/**mouseover プールダウン**/

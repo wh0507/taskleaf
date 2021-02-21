@@ -6,12 +6,3 @@ h1 カレンダー
 
 .container
   #calendar
-  
-.contents.row
-  p
-    = @nickname
-    | さんの投稿一覧
-  - @tasks.each do |task|
-    p
-      = task.title
-    span.name

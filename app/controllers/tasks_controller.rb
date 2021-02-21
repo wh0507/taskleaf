@@ -41,7 +41,7 @@ class TasksController < ApplicationController
       @task.destroy
       redirect_to tasks_url, notice: "タスク「#{@task.title}」を削除しました。"
     else
-      render :index
+      redirect_to tasks_url
     end
   end
 

@@ -1,0 +1,17 @@
+h1 カレンダー
+
+.col-12.clearfix
+  .float-right.btn-registration
+    = link_to 'タスク登録', new_task_path, class: 'btn btn-primary btn-lg mb-3 btn-registration' 
+
+.container
+  #calendar
+  
+.contents.row
+  p
+    = @nickname
+    | さんの投稿一覧
+  - @tasks.each do |task|
+    p
+      = task.title
+    span.name

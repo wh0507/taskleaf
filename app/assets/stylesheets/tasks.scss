@@ -1,6 +1,11 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  padding: 20px 10px 0px;
+}
+
 .text-size>li {
   font-size: 200px;
 }
@@ -15,4 +20,47 @@
 
 .container {
   margin: 10px 10px;
+}
+
+/*mouseover プールダウン*/
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.lists a {
+  display: block;
+  line-height: 1;
+  z-index: 1;
+}
+
+.show-lists {
+  overflow: hidden;
+  position: absolute;
+  right: 145px;
+  top: 70px;
+  width: 100px;
+  min-height: 0;
+  height: 0;
+  z-index: 3;
+  transition: min-height 0.5s;
+}
+
+/*メーニューの文字カラー*/
+.show-lists>li>a {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 10px 10px;
+  line-height: 1.75;
+  background-color: #e7ed98;
+}
+
+.show-lists>li>a:hover {
+  background-color: #40b54a;
+  opacity: 1;
+}
+
+.show-lists.active {
+  min-height: 150px;
 }

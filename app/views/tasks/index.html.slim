@@ -4,9 +4,6 @@ h1 タスク一覧
   .float-right.btn-registration
     = link_to 'タスク登録', new_task_path, class: 'btn btn-primary btn-lg mb-3 btn-registration' 
 
-.container
-  #calendar
-
 = paginate @tasks
 
 table.table.table-hover

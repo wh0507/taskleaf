@@ -21,40 +21,42 @@
   - 自分の日常を含めて、生活のスケジュール管理のため
 
 # DEMO
-  - 新規登録(ユーザー登録)画面
-  ![ ](https://gyazo.com/3fdd134415c61e997740bd98c75deb8c/raw)
-  - トップページ
+  - ## 新規登録(ユーザー登録)画面
+  [ ](https://gyazo.com/3fdd134415c61e997740bd98c75deb8c/raw)
+  - ## トップページ
   ![ ](https://gyazo.com/387014a3fa449223ced7fa7bcd8e7b33/raw)
-  - タスク登録画面
+  - ## タスク登録画面
   ![ ](https://gyazo.com/0dbb48a016ec6ed634b8a4ead4de4066/raw)
-  - 詳細表示画面
+  - ## 詳細表示画面
   ![ ](https://gyazo.com/575c4f7483e6f76005c9d58a572d52e3/raw)
-  - 編集・削除画面
-  ![編集](https://gyazo.com/09972ee4a1e688ff80c43743094afe85/raw)
-  ![削除](https://gyazo.com/3e2c1f0141a0f21d791453729ab050cd/raw)
+  - ## 編集画面
+  [編集](https://gyazo.com/09972ee4a1e688ff80c43743094afe85/raw)
+  - ## 削除画面
+  [削除](https://gyazo.com/3e2c1f0141a0f21d791453729ab050cd/raw)
 
 # 工夫したポイント
 
 # 使用記述(開発環境)
   ## パックエンド
-    Ruby, Ruby on Rails
+  Ruby, Ruby on Rails
   ## フロントエンド
-    Slim, Sass, JavaScript, JQuery, Ajax
+  Slim, Sass, JavaScript, JQuery, Ajax
   ## データベース
-    MySQL, SequelPro
+  MySQL, SequelPro
   ## インフラ
-    AWS(EC2), Capistrano
+  AWS(EC2), Capistrano
   ## Webサーバー（本番環境）
-    nginx
+  nginx
   ## アプリケーションサーバー（本番環境）
-    unicorn
+  unicorn
   ## ソース管理
-    GitHub, GitHubDesktop
+  GitHub, GitHubDesktop
   ## エディタ
-    VSCode
+  VSCode
 
 # 課題や今後実装したい機能
-
+  - マイページ実装（ID・パスワード変更など）
+  - 登録したタスクをGoogleカレンダーと連携
 
 # DB設計
 

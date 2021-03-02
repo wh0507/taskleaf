@@ -23,7 +23,7 @@
 # DEMO
   - 新規登録画面
   - トップページ
-   ![トップページ](https://gyazo.com/e256662cb8ecab026c61a00e52de8f58)
+   ![ ](https://gyazo.com/e256662cb8ecab026c61a00e52de8f58/raw)
   - タスク登録画面
   - 詳細表示画面
   - 編集・削除画面

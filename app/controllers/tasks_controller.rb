@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @tasks = Task.all.order(created_at: :desc).page(params[:page]).per(5)
+    @tasks = Task.all.order(created_at: :desc).page(params[:page]).per(7)
+    @taskcalendar = Task.all
   end
 
   def show

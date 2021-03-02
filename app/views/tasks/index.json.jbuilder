@@ -1,5 +1,5 @@
-json.array!(@tasks) do |event|
-  json.extract! event, :id, :title, :description
+json.array!(@taskcalendar) do |event|
+  json.extract! event, :id, :title, :description, :start_date, :end_date
   json.start event.start_date
   json.end event.end_date
   json.url task_url(event, format: :html)

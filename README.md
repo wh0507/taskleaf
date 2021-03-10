@@ -49,7 +49,7 @@
 
 
 # 使用記述(開発環境)
-  ## パックエンド
+  ## バックエンド
   Ruby, Ruby on Rails
   ## フロントエンド
   Slim, Sass, JavaScript, JQuery, Ajax

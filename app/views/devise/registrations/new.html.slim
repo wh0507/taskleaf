@@ -2,6 +2,10 @@
   .container
     h1 ユーザー登録
 
+    = link_to "/auth/twitter" ,class:"btn btn-social btn-twitter" do 
+      class="fa fa-twitter"
+    = link_to "Facebookアカウントでログイン", "/auth/facebook",class:"fa fa-facebook"
+
     = form_with model: @user, url: user_registration_path, local: true do |f|
       = devise_error_messages!
       .form-group

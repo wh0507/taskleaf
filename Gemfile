@@ -68,6 +68,7 @@ gem 'slim-rails'
 gem 'html2slim'
 
 gem 'bootstrap'
+gem 'bootstrap-social-rails'
 gem "sassc", "< 2.2.0"
 
 gem "aws-sdk-s3", require: false

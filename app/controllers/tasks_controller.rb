@@ -3,8 +3,10 @@ class TasksController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @tasks = Task.all.order(created_at: :desc).page(params[:page]).per(7)
+    @navitasks = Task.all.order(created_at: :desc).page(params[:page]).per(5)
     @taskcalendar = Task.all
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result(distinct: true)
   end
 
   def show
@@ -44,6 +46,11 @@ class TasksController < ApplicationController
     else
       redirect_to tasks_url
     end
+  end
+
+  def confirm_new
+    @task = current_user.tasks.new(task_params)
+    render :new unless @task.valid?
   end
 
   private
